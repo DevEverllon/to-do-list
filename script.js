@@ -80,13 +80,13 @@ function viewTask() {
     listItems.forEach((item, index) => {
         newLi = newLi + `
         <li class="task ${item.status && "done"}">
-            <img src="checked.png" onclick="concludeTask(${index})">
+            <i class="bi bi-check-lg" onclick="concludeTask(${index})"></i>
 
             <p>${item.tarefa}</p>
-
+            
             <p>${item.number}h</p>
-
-            <img src="trash.png" onclick="dellItem(${index})">
+            
+            <i class="bi bi-trash" onclick="dellItem(${index})"></i>
         </li>`
     })
 
