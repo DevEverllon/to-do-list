@@ -14,9 +14,9 @@
 <body>
     <section class="perfil">
         <div class="infos">
-            <h1 class="title">Olá, Steve</h1>
+            <h1 class="title">Olá, <span id="idName">Steve</span></h1>
 
-            <p><span id="date">21 set 2024</span> | <span id="hour">12:00 pm</span></p>
+            <p><span id="date">21 set 2024</span> || <span id="hour">12:00 pm</span></p>
         </div>
 
         <img src="perfil-4.png" alt="foto de perfil" class="img-perfil">
@@ -25,6 +25,9 @@
     <section class="conteiner">
         <div class="input-add">
             <input type="text" placeholder="Adicione uma tarefa..." autocomplete="off" id="input">
+
+            <input type="number" placeholder="Data" id="input_number">
+
             <button type="submit" id="button">Adicionar</button>
         </div>
 

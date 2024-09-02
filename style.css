@@ -124,3 +124,10 @@ body {
     background-color: #32bc32;
     text-decoration: line-through;
 }
+
+
+@media screen and (max-width: 800px){
+    .task img {
+        opacity: 1;
+    }
+}

@@ -1,4 +1,5 @@
 const input = document.querySelector('#input');
+const number = document.querySelector('#input_number');
 const button = document.querySelector('#button');
 const listComplet = document.querySelector('.list-tasks');
 
@@ -19,7 +20,7 @@ mes = mes < 10 ? `0${mes}` : mes;
 horas = horas < 10 ? `0${horas}` : horas;
 
 // Determinar AM ou PM
-const periodo = horas >= 12 ? 'PM' : 'AM';
+const periodo = horas >= 12 ? 'pm' : 'am';
 
 // Converter para formato de 12 horas
 horas = horas % 12;
@@ -45,13 +46,25 @@ function inputValue() {
         return;
     }
 
+    if (number.value === '') {
+        mansage('Ops, adicione um horário', '#dc2626');
+        return;
+    }
+
+    if (number.value > 24) {
+        mansage('Adicione um horario válido', '#dc2626');
+        return;
+    }
+
     listItems.push({
         tarefa: input.value,
+        number: number.value,
         status: false
     });
 
     // para limpar o input
     input.value = '';
+    number.value = '';
 
     // apos ele adicionar na array ele vai chamar minha outra função
     viewTask();
@@ -70,6 +83,8 @@ function viewTask() {
             <img src="checked.png" onclick="concludeTask(${index})">
 
             <p>${item.tarefa}</p>
+
+            <p>${item.number}h</p>
 
             <img src="trash.png" onclick="dellItem(${index})">
         </li>`
@@ -119,3 +134,17 @@ function mansage(text, background) {
         }
     }).showToast();
 }
+
+
+
+// Verifica se já existe um nome armazenado no localStorage
+let name = localStorage.getItem('userName');
+
+if (!name) {
+    // Se não houver nome armazenado, exibe o prompt e armazena o nome
+    name = prompt('Qual seu nome?');
+    localStorage.setItem('userName', name);
+}
+
+// Exibe o nome no elemento com ID 'idName'
+document.querySelector('#idName').innerHTML = name;
