@@ -163,9 +163,14 @@ body {
     text-decoration: line-through;
 }
 
-
 @media screen and (max-width: 800px) {
     .bi {
         opacity: 1;
+    }
+}
+
+@media screen and (min-width: 1165px) {
+    .conteiner {
+        width: 1150px;
     }
 }
