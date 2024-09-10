@@ -87,6 +87,7 @@ function viewTask() {
             <p>${item.number}h</p>
             
             <i class="bi bi-trash" onclick="dellItem(${index})"></i>
+
         </li>`
     })
 
